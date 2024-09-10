@@ -1,6 +1,6 @@
 # FORTRAN Programs - Computational Laboratory
 
-This repository contains all FORTRAN programs that are taught in the Computational and Numerical Methods Course (PHY 506 MJP) in MSc-I Physics at Savitribai Phule Pune University. The programs will be updated on a weekly basis.
+This repository contains all FORTRAN programs that are taught in the *Computational and Numerical Methods (PHY 506 MJP)* course in MSc-I Physics at Savitribai Phule Pune University. The programs will be updated on a weekly basis.
 
 ## How to compile and run the program:
 
