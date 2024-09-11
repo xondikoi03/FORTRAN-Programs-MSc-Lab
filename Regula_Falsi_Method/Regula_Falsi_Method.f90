@@ -1,12 +1,12 @@
   !!------------------------------------!!
   !!  Original Author: Raj Handique     !!
   !!  PRN: 240210723                    !!
-  !!  Date Created: 5 September, 2024   !!
+  !!  Date Created: 11 September, 2024   !!
   !!  FORTRAN 95 - Source Code          !!
   !!------------------------------------!!
 
 
-  program BISECTION_METHOD
+  program REGULA_FALSI_METHOD
 
     !!---------------------------------------------------------
     !! This program will require the user to declare all the variables and typecast explicitly !!
@@ -18,14 +18,14 @@
     !! Declare the variables
     !!--------------------------------------------------------
     integer::g, counter
-    real:: eps, del, rel, init1, init2, x1, x2, x3, root, f1, f2, f3, f, check_flag, sign_check
+    real:: eps, rel, del, init1, init2, x1, x2, x3, root, f1, f2, f3, f, check_flag, sign_check
     !! INTERFACE MESSAGE !!
 
     WRITE(*,*)"------------------------------------------------------------------------"
-    WRITE(*,*)"This program performs the Bisection method to find roots of a function"
+    WRITE(*,*)"This program performs the RegulaFalsi method to find roots of a function"
     WRITE(*,*)"The given function is f(x)={(x^2)+2x-15}"
     WRITE(*,*)"Original Author: Raj Handique"
-    WRITE(*,*)"Created on: 5 September, 2024"
+    WRITE(*,*)"Created on: 11 September, 2024"
     WRITE(*,*)"PRN: 24021073"
     WRITE(*,*)"------------------------------------------------------------------------"
 
@@ -83,14 +83,14 @@
     	
     
     DO
-       f1 = f(x1)
-       f2 = f(x2)	
-       x3 = (x2+x1)/2
+       f1=f(x1)
+       f2=f(x2) 
+       x3 = ((x1*f2) - (x2*f1))/(f2 - f1)
        f3 = f(x3)
        sign_check = f1*f3
-       
-       !! sys calls to check if the program worked fine (not required)
-       
+          
+       !! sys calls to check if the program worked fine (not required)   
+          
        !!WRITE(*,*)"----------------------------------------"
        !!WRITE(*,*)"The Value of f(x1) is :", f1
        !!WRITE(*,*)"----------------------------------------"
@@ -109,7 +109,7 @@
        
        rel = ABS(x2-x1)/ABS(x2)
        
-       IF(ABS(f3)<eps.OR.rel<del) EXIT
+       IF(ABS(f3)<eps.OR.rel<del) EXIT	
 
     ENDDO
     
@@ -123,7 +123,7 @@
 
     10 FORMAT (A, I3)
     20 FORMAT (A, F6.2)
-  end program BISECTION_METHOD
+  end program REGULA_FALSI_METHOD
 
 
   !!------------------------------------!!
