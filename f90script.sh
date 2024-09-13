@@ -90,12 +90,19 @@ implicit none
 !! Declare the variables
 !!---------------------------------
 
+EOF
+
+for ((k=1; k<=SUB; k++)); do
+    echo "real::"${funcsubarr[k]} >> $FILENAME
+done
+
+cat <<EOL >> $FILENAME
+
 !!---------------------------------
 !! Analysis Block
 !!---------------------------------
 
-
-EOF
+EOL
 
 echo program ${FILE} >> $FILENAME
 
