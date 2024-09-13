@@ -1,0 +1,19 @@
+# FORTRAN Programs - Computational Laboratory
+
+This repository contains all FORTRAN programs that are taught in the Computational and Numerical Methods Course (PHY 506 MJP) in MSc-I Physics at Savitribai Phule Pune University. The programs will be updated on a weekly basis.
+
+## How to compile and run the program:
+
+1. To compile the program, run the following command on your terminal:
+
+```
+gfortran -o output_filename program.f90
+```
+
+2. To run the program, run the following command on your terminal:
+
+```
+./output_filename
+```
+
+That's it. Now you're a FORTRAN programmer (not really!)
