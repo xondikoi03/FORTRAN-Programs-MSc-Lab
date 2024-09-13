@@ -21,12 +21,18 @@ gfortran -o output_filename program.f90
 1. Run the BASH script using:
 
 ```
-./mkf90.sh
+./f90script.sh
 ```
 
 2. It will prompt you `Enter the program name:`. Enter the name you want your program to be named.
 
-3. After that it will prompt you `Enter the path of the directory:`. Enter the name of the directory you want to save the file in. 
+3. It will prompt you `"Do you wish to declare any function sub-programs?(y/n)`. You need to answer y/N depending upon if your program requires a function sub-program.
+
+4. When answered y or Y, it will prompt you `How many function sub-programs do you wish to declare?`. You need to enter the number of sub-programs you want to declare in your program.
+
+5. After that it will prompt you `Name of the function sub program? n`, where n is the n-th sub-program. Enter the name of the sub-program. It will continue to prompt you for n-times.
+
+6. After that it will prompt you `Enter the path of the directory:`. Enter the name of the directory you want to save the file in. 
 
 That's it.
 
