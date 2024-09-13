@@ -56,6 +56,7 @@ then
 
 elif [[ "$ANS"=="n" || "$ANS"=="N" ]];
 then
+    echo "No Sub-programs are declared!"
     exit 2
 else
     
