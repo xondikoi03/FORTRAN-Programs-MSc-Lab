@@ -1,0 +1,45 @@
+!!-----------------------------------------------------
+!! This program is written to plot the exponential decay of a given sample
+!! Original Author: Raj Handique
+!! Date Created: 16 October 2024
+!! FORTRAN 95 Source Code
+!!-----------------------------------------------------
+program EXPONENTIAL_DECAY
+
+!!---------------------------------
+!! This program will require the user to declare all the variables and typecast explicitly !!
+!!---------------------------------
+
+implicit none
+
+!!---------------------------------
+!! Declare the variables
+!!---------------------------------
+
+real::exp_fit
+real::lsf_fit
+
+!!---------------------------------
+!! Analysis Block
+!!---------------------------------
+
+program EXPONENTIAL_DECAY
+
+!!---------------------------------
+!! function sub-program
+!!---------------------------------
+
+
+real function exp_fit(x)
+
+implicit none
+
+end function
+
+
+real function lsf_fit(x)
+
+implicit none
+
+end function
+

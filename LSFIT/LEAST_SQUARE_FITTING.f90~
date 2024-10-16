@@ -1,0 +1,37 @@
+!!-----------------------------------------------------
+!! This program is written to perform the Least Sqaure Fitting of data points
+!! Original Author: Raj Handique
+!! Date Created: 16 October 2024
+!! FORTRAN 95 Source Code
+!!-----------------------------------------------------
+program LEAST_SQUARE_FITTING
+
+!!---------------------------------
+!! This program will require the user to declare all the variables and typecast explicitly !!
+!!---------------------------------
+
+implicit none
+
+!!---------------------------------
+!! Declare the variables
+!!---------------------------------
+
+real::lsfit
+
+!!---------------------------------
+!! Analysis Block
+!!---------------------------------
+
+program LEAST_SQUARE_FITTING
+
+!!---------------------------------
+!! function sub-program
+!!---------------------------------
+
+
+real function lsfit(x)
+
+implicit none
+
+end function
+
