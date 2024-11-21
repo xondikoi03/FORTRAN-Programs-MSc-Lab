@@ -1,0 +1,59 @@
+#!/bin/zsh
+
+###################################################################
+#
+# A script for convenient printing fortran 90 program
+#
+################################################################### 
+# this script is done by deepak bankar in jan2010 for
+#printing the file in appropriate manner.
+############################################################################
+printf "Program name ?\n"
+read name
+printf "\n"
+printf "\n"
+printf "\n"
+rm -f ${name}.x
+if [ -e ${name}.f90 ] ; then    # Changed by deepak
+	 echo " " > ${name}.out
+        date >> ${name}.out
+        echo " " >> ${name}.out
+        cat ${name}.f90 >> ${name}.out
+	f95 ${name}.f90 -o ${name}.x
+	if [ -e ${name}.x ] ; then    # Changed by deepak
+		printf "\nOutput***********************************\n" >> ${name}.out
+		./${name}.x | tee -a ${name}.out
+		printf  "\n*****************************************\n" >> ${name}.out
+		sed -i 's/^/\t\t/' ${name}.out # Changed by dinesh
+		cat ${name}.out
+		printf "Do you want to view and print? (y/n)\n"   # added by deepak
+		read ans 
+	if [ "${ans}" = "n" ] ; then
+	 printf "Print operation skipped\n"
+	else 
+	printf "Printing the file\n"
+#	\lpr ${name}.out
+	/usr/bin/gnome-text-editor ${name}.out
+	printf "Done!"
+	fi 
+else
+printf "Oops!.. There is something wrong in compilation. User is requested to chk the screen output to sort out compilation errors\n"
+fi
+else
+  printf "\a Ooops! ${name}.f90 does not exits... Make sure NOT to include '.f90' in program name ...Script stops here ...\n" 
+echo "Program**********************************" > ${name}.out 
+rm -rf ${name}.out
+fi
+
+
+
+#printf "\n--------~~-----~------~~---------~----------~~---~---\n"
+#printf " Copy-left : All rights thrown off!  \n"
+#printf " A Script by Deepak Bankar.\n"
+#printf " Report bugs to :\n"
+#printf " deepak@physics.unipune.ernet.in "
+#printf "\n--------~~-----~------~~---------~----------~~---~---\n"
+
+
+
+# A script by Deepak Bankar

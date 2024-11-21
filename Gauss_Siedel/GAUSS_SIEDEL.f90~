@@ -1,0 +1,37 @@
+!!-----------------------------------------------------
+!! This program performs Gauss Siedel Method
+!! Original Author: Raj Handique
+!! Date Created: 16 November 2024
+!! FORTRAN 95 Source Code
+!!-----------------------------------------------------
+program GAUSS_SIEDEL
+
+!!---------------------------------
+!! This program will require the user to declare all the variables and typecast explicitly !!
+!!---------------------------------
+
+implicit none
+
+!!---------------------------------
+!! Declare the variables
+!!---------------------------------
+
+real::gsiedel
+
+!!---------------------------------
+!! Analysis Block
+!!---------------------------------
+
+program GAUSS_SIEDEL
+
+!!---------------------------------
+!! function sub-program
+!!---------------------------------
+
+
+real function gsiedel(x)
+
+implicit none
+
+end function
+

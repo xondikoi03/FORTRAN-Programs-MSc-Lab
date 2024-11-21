@@ -1,0 +1,37 @@
+!!-----------------------------------------------------
+!! This program performs LU Decomposition method
+!! Original Author: Raj Handique
+!! Date Created: 16 November 2024
+!! FORTRAN 95 Source Code
+!!-----------------------------------------------------
+program LU_DECOMPOSITION
+
+!!---------------------------------
+!! This program will require the user to declare all the variables and typecast explicitly !!
+!!---------------------------------
+
+implicit none
+
+!!---------------------------------
+!! Declare the variables
+!!---------------------------------
+
+real::ludcp
+
+!!---------------------------------
+!! Analysis Block
+!!---------------------------------
+
+program LU_DECOMPOSITION
+
+!!---------------------------------
+!! function sub-program
+!!---------------------------------
+
+
+real function ludcp(x)
+
+implicit none
+
+end function
+

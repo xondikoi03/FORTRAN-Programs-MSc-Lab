@@ -1,0 +1,99 @@
+!!-----------------------------------------------------
+!! This program performs Euler's method for numerical solution of 1st order differential equation (Both simple & modified Euler)
+!! Original Author: Raj Handique
+!! Date Created: 13 November 2024
+!! FORTRAN 95 Source Code
+!!-----------------------------------------------------
+program DIFFERENTIAL_EQUATION_SECOND_ORDER
+
+  !!---------------------------------
+  !! This program will require the user to declare all the variables and typecast explicitly !!
+  !!---------------------------------
+
+  implicit none
+
+  !!---------------------------------
+  !! Declare the variables
+  !!---------------------------------
+
+  real::df, t, x, z, lambda, h 
+
+  !!---------------------------------
+  !! Analysis Block
+  !!---------------------------------
+
+  WRITE(*,*)"The given program finds the analytical as well as euler's solution the motion of damped oscilator with differential equation."
+
+  WRITE(*,*)"Enter the initial value of time"
+  READ(*,*) t
+  WRITE(*,*)"------------------------------"
+  WRITE(*,*)"The initial value of time: ", t
+  WRITE(*,*)"------------------------------"
+
+  WRITE(*,*)"Enter the inital value of position:"
+  READ(*,*) x
+  WRITE(*,*)"------------------------------"
+  WRITE(*,*)"The initial value of position:", x
+  WRITE(*,*)"------------------------------"
+
+  WRITE(*,*)"Enter the value of increment"
+  READ(*,*) h
+  WRITE(*,*)"------------------------------"
+  WRITE(*,*)"The number of increment: ", h
+  WRITE(*,*)"------------------------------"
+
+
+  OPEN(UNIT=1,file='SHM.dat')
+
+  call euler(t, x, h)
+
+end program DIFFERENTIAL_EQUATION_SECOND_ORDER
+
+!!---------------------------------
+!! function sub-program
+!!---------------------------------
+
+!! Analytical solution
+
+real function f(lambda, t)
+  implicit none
+  real::lambda, t
+  f = 2 * exp(-lambda*lambda*t) * cos(t)
+  return 
+end function f
+
+!! Differential Equation
+
+real function df(x, z, lambda)
+  implicit none
+  real:: x, z, w, lambda 
+  w = 1
+  df = -((w**2)*x) - (lambda*z)
+  return
+end function df
+
+!!---------------------------------
+!! sub-routine
+!!---------------------------------
+
+subroutine euler(t, x, h)
+
+  implicit none
+  real::t, x, z, anaFuncVal
+  real::h, df, f, lambda
+  integer::n, i
+
+  !! Storing Initial Values !!
+  n = 200
+  z = 0
+  lambda = 0.00
+  DO i=1, n
+
+     z = z + (df(x, z, lambda) * h)
+     x = x + (z * h)
+     t = t + h
+     anaFuncVal = f(lambda, t)
+     
+     WRITE(1,*) t, x, z, anaFuncVal 
+  END DO
+end subroutine euler
