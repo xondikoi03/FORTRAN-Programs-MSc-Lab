@@ -40,4 +40,4 @@ gfortran -o output_filename program.f90
 
 That's it.
 
-> **Note :** I'll update at the end of the semester, if I pass this course (FR!)
+> **Note :** I'll update at the end of the semester, if I pass this course (FR!) Update: I PASSED !
